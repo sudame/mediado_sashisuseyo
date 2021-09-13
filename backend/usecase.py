@@ -13,7 +13,7 @@ class Usecase:
         for r in res:
             purchased_shops.append(PurchasedShop(
                 url=r["purchased_store"],
-                purchased_date=r["purchased_date"]
+                purchasedDate=r["purchased_date"]
             ))
         res = res[0]
         return Book(
