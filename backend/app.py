@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    name = "test"
+    name = 'test'
     return name + "\n"
 
 
