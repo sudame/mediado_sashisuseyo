@@ -1,22 +1,33 @@
 # 開発（バックエンド）
 # 初期設定
 1: .仮想環境の構築
+
+virtualenvのインストール
 ```
-$ pip install vitualenv <ファイル名>
+$ pip install vitualenv
+```
+
+仮想環境の作成
+```
+virtualenv <仮想環境名>
 ```
 ```
-$ virtualenv <ファイル名>\Scripts\activate
+# Windows
+$ virtualenv <仮想環境名>\Scripts\activate
+
+# Linux or WSL
+$ source <仮想環境名>/bin/activate
 ```
 2: .必要なライブラリのインストール
 ```
 $ python -V
 Python 3.8.0
 
-& pip -V
-pip 19.2.3
+$ pip -V
+pip 21.2.4
 ```
 ```
-$ pip install flask
+$ pip install -r requirements.txt
 ```
 
 3: .ローカルサーバーの立ち上げ
@@ -24,7 +35,6 @@ $ pip install flask
 python app.py
 ````
 4: .herokuへのデプロイ
-
 
 
 
