@@ -1,0 +1,8 @@
+# dev
+bin/
+include/
+lib/
+lib64
+
+# misc
+.DS_Store
