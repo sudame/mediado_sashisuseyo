@@ -29,13 +29,17 @@ type BookResponse = {
 
 export const getBookList = (uid: string) => {
   return axios
-    .get<BookListResponse>(`${process.env.BASE_URL}/user/${uid}/booklist`)
+    .get<BookListResponse>(
+      `${process.env.REACT_APP_BASE_URL}/user/${uid}/booklist`
+    )
     .then((res) => res.data.map((item) => new BookListItem(item)));
 };
 
 export const getBookByID = (uid: string, bookId: string) => {
   return axios
-    .get<BookResponse>(`${process.env.BASE_URL}/user/${uid}/book/${bookId}`)
+    .get<BookResponse>(
+      `${process.env.REACT_APP_BASE_URL}/user/${uid}/book/${bookId}`
+    )
     .then(
       (res) =>
         new Book({
