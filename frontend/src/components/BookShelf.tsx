@@ -1,25 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { getBookList } from "../api/BookAPI";
-import { BookListItem } from "../models/BookListItem";
+import React from "react";
+import { useBookList } from "./hooks/useBookList";
 
 export const BookShelf: React.FC = () => {
-  const [bookList, setBookList] = useState<BookListItem[]>([]);
-  const _getBookList = async () => {
-    // 接続確認のため、固定値 '1'
-    setBookList(await getBookList("1"));
-  };
-  useEffect(() => {
-    _getBookList();
-  }, []);
+  const bookList = useBookList();
+
   return (
     <>
       {/* tanaita に booklist を渡す */}
       <div>
         {bookList.map((data) => (
-          <>
+          <div key={data.id}>
             <div>{data.id}</div>
             <div>{data.title}</div>
-          </>
+          </div>
         ))}
       </div>
     </>
