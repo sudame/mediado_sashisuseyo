@@ -35,6 +35,19 @@ export const getBookList = (uid: string) => {
     .then((res) => res.data.map((item) => new BookListItem(item)));
 };
 
+export const __mockGetBookList: typeof getBookList = async (uid: string) => {
+  const sleep = (msec: number) =>
+    new Promise<void>((resolve) => setTimeout(resolve, msec));
+
+  await sleep(3000);
+  return [
+    new BookListItem({
+      id: "hogehoge",
+      title: "fugafuga",
+    }),
+  ];
+};
+
 export const getBookByID = (uid: string, bookId: string) => {
   return axios
     .get<BookResponse>(
