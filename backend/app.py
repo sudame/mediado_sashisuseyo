@@ -19,7 +19,7 @@ def hello():
 @app.route('/user/<int:user_id>/booklist', methods=["GET"])
 def booklist(user_id):
     book_titles = usecase.get_booklist(user_id)
-    response = [{"title": b.title, "id": "b.id"} for b in book_titles]
+    response = [{"title": b.title, "id": b.id} for b in book_titles]
 
     return jsonify(response)
 
