@@ -12,7 +12,7 @@ class BookTitle(object):
 @dataclass
 class PurchasedShop(object):
     url: str
-    purchased_date: datetime.datetime
+    purchasedDate: datetime.datetime
 
 
 @dataclass
