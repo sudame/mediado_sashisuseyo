@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getBookList, getBookByID } from "../api/BookAPI";
+import { getBookList } from "../api/BookAPI";
 import { BookListItem } from "../models/BookListItem";
 
 export const BookShelf: React.FC = () => {
