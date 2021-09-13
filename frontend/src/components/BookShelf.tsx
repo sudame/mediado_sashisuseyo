@@ -9,7 +9,7 @@ export const BookShelf: React.FC = () => {
     <>
       {/* tanaita に booklist を渡す */}
       <div>
-        <Tanaita bookList={bookList}></Tanaita>
+        <Tanaita bookList={bookList} />
       </div>
     </>
   );
