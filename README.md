@@ -1,1 +1,0 @@
-# mediado_sashisuseyo
