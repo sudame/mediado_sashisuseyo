@@ -1,5 +1,6 @@
 import React from "react";
 import { useBookList } from "./hooks/useBookList";
+import { Tanaita } from "./Tanaita";
 
 export const BookShelf: React.FC = () => {
   const bookList = useBookList();
@@ -8,12 +9,7 @@ export const BookShelf: React.FC = () => {
     <>
       {/* tanaita に booklist を渡す */}
       <div>
-        {bookList.map((data) => (
-          <div key={data.id}>
-            <div>{data.id}</div>
-            <div>{data.title}</div>
-          </div>
-        ))}
+        <Tanaita bookList={bookList}></Tanaita>
       </div>
     </>
   );
