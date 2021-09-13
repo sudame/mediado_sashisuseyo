@@ -46,14 +46,3 @@ export const getBookByID = (uid: string, bookId: string) => {
         })
     );
 };
-
-/**
- *
- * {
- *  ...res.data,
- *  purchasedShops: res.data.purchasedShops.map()
- * }
- *
- *
- *
- */
