@@ -10,7 +10,7 @@ type Prop = {
 
 export const Tanaita: React.FC<Prop> = ({ bookList, onBookSpineClick }) => {
   return (
-    <>
+    <div className="tanaita tanaita-style">
       {bookList.map((book) => {
         return (
           <BookSpine
@@ -20,7 +20,6 @@ export const Tanaita: React.FC<Prop> = ({ bookList, onBookSpineClick }) => {
           ></BookSpine>
         );
       })}
-      <div className="tanaita tanaita-style"></div>
-    </>
+    </div>
   );
 };
