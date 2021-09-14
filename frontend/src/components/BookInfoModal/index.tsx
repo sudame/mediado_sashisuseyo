@@ -1,20 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { getBookByID } from "../../api/BookAPI";
 import { Book } from "../../models/Book";
+import "./style.scss";
 
 type PanelProp = {
   book: Book;
+  onCloseModal?: () => void;
 };
 
-const BookInfoModalPanel: React.FC<PanelProp> = ({ book }) => {
+const BookInfoModalPanel: React.FC<PanelProp> = ({ book, onCloseModal }) => {
+  const modifyNewLine = (text: string) => text.replaceAll("\\n", "\n");
+
   return (
-    <div className="book-info-panel">
-      <div className="book-info-panel--title">{book.title}</div>
-      <div className="book-info-panel--image">
-        {book.image ? <img src={book.image} alt="本の表紙" /> : null}
+    <div
+      className="book-info-panel"
+      onClick={(event) => event.stopPropagation()}
+    >
+      <button className="book-info-panel--close-button" onClick={onCloseModal}>
+        ✕
+      </button>
+      <div className="book-info-panel--left">
+        <div className="book-info-panel--image">
+          {book.image ? <img src={book.image} alt="本の表紙" /> : null}
+        </div>
       </div>
-      <div className="book-info-panel--title">{book.author}</div>
-      <div className="book-info-panel--title">{book.description}</div>
+      <div className="book-info-panel--right">
+        <div className="book-info-panel--title">{book.title}</div>
+        <div className="book-info-panel--author">{book.author}</div>
+        <div className="book-info-panel--description">
+          {modifyNewLine(book.description)}
+        </div>
+      </div>
     </div>
   );
 };
@@ -36,13 +52,10 @@ export const BookInfoModal: React.FC<Prop> = ({ bookId, onCloseModal }) => {
   }, [bookId]);
 
   return (
-    <div className="book-info-modal-wrapper">
+    <div className="book-info-modal-wrapper" onClick={onCloseModal}>
       <div className="book-info-modal">
-        <div className="book-info-modal--close" onClick={onCloseModal}>
-          X
-        </div>
         {bookInfo ? (
-          <BookInfoModalPanel book={bookInfo} />
+          <BookInfoModalPanel book={bookInfo} onCloseModal={onCloseModal} />
         ) : (
           <div>Loading...</div>
         )}
