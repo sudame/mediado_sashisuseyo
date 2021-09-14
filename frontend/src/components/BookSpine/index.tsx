@@ -1,5 +1,5 @@
 import { BookListItem } from "../../models/BookListItem";
-import "./style.css";
+import "./style.scss";
 
 type Prop = {
   book: BookListItem;

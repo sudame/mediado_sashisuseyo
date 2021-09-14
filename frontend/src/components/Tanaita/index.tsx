@@ -1,7 +1,7 @@
 import React from "react";
 import { BookListItem } from "../../models/BookListItem";
 import { BookSpine } from "../BookSpine";
-import "./style.css";
+import "./style.scss";
 
 type Prop = {
   bookList: BookListItem[];
@@ -10,16 +10,19 @@ type Prop = {
 
 export const Tanaita: React.FC<Prop> = ({ bookList, onBookSpineClick }) => {
   return (
-    <div className="tanaita tanaita-style">
-      {bookList.map((book) => {
-        return (
-          <BookSpine
-            key={book.id}
-            book={book}
-            onBookSpineClick={onBookSpineClick}
-          ></BookSpine>
-        );
-      })}
+    <div className="tanaita">
+      <div className="tanaita--container">
+        {bookList.map((book) => {
+          return (
+            <BookSpine
+              key={book.id}
+              book={book}
+              onBookSpineClick={onBookSpineClick}
+            ></BookSpine>
+          );
+        })}
+      </div>
+      <div className="tanaita--ita"></div>
     </div>
   );
 };
