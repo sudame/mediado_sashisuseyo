@@ -1,7 +1,10 @@
+import { BookListItem } from "../models/BookListItem";
+
 type Prop = {
-  title: string;
+  book: BookListItem;
+  onBookSpineClick: (book: BookListItem) => void;
 };
 
-export const BookSpine: React.FC<Prop> = ({ title }) => {
-  return <div>{title}</div>;
+export const BookSpine: React.FC<Prop> = ({ book, onBookSpineClick }) => {
+  return <div onClick={() => onBookSpineClick(book)}>{book.title}</div>;
 };
