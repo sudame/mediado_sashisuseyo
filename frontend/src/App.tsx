@@ -5,7 +5,10 @@ import { BookShelf } from "./components/BookShelf";
 function App() {
   return (
     <div className="App">
-      <BookShelf />
+      <div className="app-bar"></div>
+      <main className="main">
+        <BookShelf />
+      </main>
     </div>
   );
 }
