@@ -1,0 +1,17 @@
+.book-spine-wrapper {
+  /* 30分割して隣との間隔分の差を幅としている */
+  width: calc(100% / 30 - 2 * 0.5vw);
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  margin: 0 0.5vw;
+  background-color: #c4c4c4;
+  /* ブラウザのズームで子要素が飛び出すため、一時的措置 */
+  overflow: hidden;
+}
+.book-spine-title {
+  margin: 0.5vh;
+  /* 縦書き */
+  writing-mode: vertical-rl;
+}
