@@ -20,10 +20,10 @@ export const BookShelf: React.FC = () => {
 
   // bookListをn分割した配列の生成
   const bookListSplit = (bookList: BookListItem[], n: number) =>
-    bookList.reduce(
+    bookList.reduce<BookListItem[][]>(
       (acc, _, index) =>
         index % n ? acc : [...acc, bookList.slice(index, index + n)],
-      [] as any[]
+      []
     );
 
   return (
