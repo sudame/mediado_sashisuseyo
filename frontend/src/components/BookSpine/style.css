@@ -1,7 +1,6 @@
 .book-spine-wrapper {
-  /* 30分割して隣との間隔分の差を幅としている */
-  width: calc(100% / 30 - 2 * 0.5vw);
-  height: 15vh;
+  width: max-content;
+  height: 100px;
   display: flex;
   justify-content: center;
   text-align: left;
