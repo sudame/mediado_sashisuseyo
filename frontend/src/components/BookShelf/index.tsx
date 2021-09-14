@@ -3,7 +3,7 @@ import { BookListItem } from "../../models/BookListItem";
 import { BookInfoModal } from "../BookInfoModal";
 import { useBookList } from "../hooks/useBookList";
 import { Tanaita } from "../Tanaita";
-import "./style.css";
+import "./style.scss";
 
 export const BookShelf: React.FC = () => {
   const bookList = useBookList();
