@@ -1,6 +1,7 @@
 import React from "react";
-import { useBookList } from "./hooks/useBookList";
-import { Tanaita } from "./Tanaita";
+import { useBookList } from "../hooks/useBookList";
+import { Tanaita } from "../Tanaita";
+import "./style.css";
 
 export const BookShelf: React.FC = () => {
   const bookList = useBookList();
@@ -8,7 +9,7 @@ export const BookShelf: React.FC = () => {
   return (
     <>
       {/* tanaita に booklist を渡す */}
-      <div>
+      <div className="book-shelf-size book-shelf-bg ">
         <Tanaita bookList={bookList} />
       </div>
     </>
