@@ -1,6 +1,7 @@
 import React from "react";
-import { BookListItem } from "../models/BookListItem";
-import { BookSpine } from "./BookSpine";
+import { BookListItem } from "../../models/BookListItem";
+import { BookSpine } from "../BookSpine";
+import "./style.css";
 
 type Prop = {
   bookList: BookListItem[];
@@ -19,6 +20,7 @@ export const Tanaita: React.FC<Prop> = ({ bookList, onBookSpineClick }) => {
           ></BookSpine>
         );
       })}
+      <div className="tanaita tanaita-style"></div>
     </>
   );
 };
