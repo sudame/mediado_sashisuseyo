@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 # coding: utf-8
-import json
-
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 from usecase import Usecase
 
 app = Flask(__name__)
+CORS(app)
 usecase = Usecase()
 
 

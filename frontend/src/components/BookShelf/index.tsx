@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { BookListItem } from "../models/BookListItem";
-import { BookInfoModal } from "./BookInfoModal";
-import { useBookList } from "./hooks/useBookList";
-import { Tanaita } from "./Tanaita";
+import { BookListItem } from "../../models/BookListItem";
+import { BookInfoModal } from "../BookInfoModal";
+import { useBookList } from "../hooks/useBookList";
+import { Tanaita } from "../Tanaita";
+import "./style.css";
 
 export const BookShelf: React.FC = () => {
   const bookList = useBookList();
@@ -19,7 +20,7 @@ export const BookShelf: React.FC = () => {
 
   return (
     <>
-      <div>
+      <div className="book-shelf-size book-shelf-bg">
         <Tanaita bookList={bookList} onBookSpineClick={handleBookSpineClick} />
         {targetBookId ? (
           <BookInfoModal
