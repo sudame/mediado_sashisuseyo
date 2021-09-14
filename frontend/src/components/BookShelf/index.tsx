@@ -18,10 +18,25 @@ export const BookShelf: React.FC = () => {
     setTargetBookId(null);
   };
 
+  // bookListをn分割した配列の生成
+  const bookListSplit = (bookList: BookListItem[], n: number) =>
+    bookList.reduce(
+      (acc, _, index) =>
+        index % n ? acc : [...acc, bookList.slice(index, index + n)],
+      [] as any[]
+    );
+
   return (
     <>
       <div className="book-shelf-size book-shelf-bg">
-        <Tanaita bookList={bookList} onBookSpineClick={handleBookSpineClick} />
+        {/* n=20はマジックナンバー。一旦これぐらいの見積。 */}
+        {bookListSplit(bookList, 20).map((books, index) => (
+          <Tanaita
+            bookList={books}
+            onBookSpineClick={handleBookSpineClick}
+            key={index}
+          />
+        ))}
         {targetBookId ? (
           <BookInfoModal
             bookId={targetBookId}
