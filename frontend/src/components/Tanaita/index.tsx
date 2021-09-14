@@ -22,7 +22,10 @@ export const Tanaita: React.FC<Prop> = ({ bookList, onBookSpineClick }) => {
           );
         })}
       </div>
-      <div className="tanaita--ita"></div>
+      <div className="tanaita--ita">
+        <div className="tanaita--ita-1"></div>
+        <div className="tanaita--ita-2"></div>
+      </div>
     </div>
   );
 };
