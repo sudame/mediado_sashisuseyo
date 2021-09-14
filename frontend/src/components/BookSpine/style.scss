@@ -20,4 +20,8 @@
 
   /* ブラウザのズームで子要素が飛び出すため、一時的措置 */
   overflow: hidden;
+
+  &:focus {
+    border: red 1px solid;
+  }
 }

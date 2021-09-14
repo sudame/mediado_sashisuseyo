@@ -16,7 +16,11 @@ const BookInfoModalPanel: React.FC<PanelProp> = ({ book, onCloseModal }) => {
       className="book-info-panel"
       onClick={(event) => event.stopPropagation()}
     >
-      <button className="book-info-panel--close-button" onClick={onCloseModal}>
+      <button
+        className="book-info-panel--close-button"
+        onClick={onCloseModal}
+        autoFocus={true}
+      >
         ✕
       </button>
       <div className="book-info-panel--left">
@@ -50,6 +54,19 @@ export const BookInfoModal: React.FC<Prop> = ({ bookId, onCloseModal }) => {
   useEffect(() => {
     _getBookInfo(bookId);
   }, [bookId]);
+
+  // escキーが押されたらモーダルを閉じる
+  useEffect(() => {
+    const listener = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onCloseModal();
+      }
+    };
+
+    document.addEventListener("keydown", listener);
+
+    return document.removeEventListener("keydown", listener);
+  }, [onCloseModal]);
 
   return (
     <div className="book-info-modal-wrapper" onClick={onCloseModal}>
