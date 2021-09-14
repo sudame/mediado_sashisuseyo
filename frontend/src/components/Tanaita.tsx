@@ -10,7 +10,7 @@ export const Tanaita: React.FC<Prop> = ({ bookList }) => {
   return (
     <>
       {bookList.map((book) => {
-        return <BookSpine key={book.id} title={book.title}></BookSpine>;
+        return <BookSpine key={book.id} book={book}></BookSpine>;
       })}
     </>
   );
