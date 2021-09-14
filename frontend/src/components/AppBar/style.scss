@@ -8,11 +8,16 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 4px 5vw;
+  padding: 8px 5vw;
 
-  img {
+  &--logo {
     display: block;
     height: 100%;
+  }
+
+  &--title-logo {
+    margin-left: 8px;
+    height: 75%;
   }
 
   .spacer {
