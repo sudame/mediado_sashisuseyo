@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { getBookByID } from "../../api/BookAPI";
 import { Book } from "../../models/Book";
 import "./style.scss";
@@ -55,18 +55,22 @@ export const BookInfoModal: React.FC<Prop> = ({ bookId, onCloseModal }) => {
     _getBookInfo(bookId);
   }, [bookId]);
 
-  // escキーが押されたらモーダルを閉じる
-  useEffect(() => {
-    const listener = (event: KeyboardEvent) => {
+  // escキーが押されたらモーダルを閉じる(リスナの生成)
+  const closeModalKeyboardListener = useCallback(
+    (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         onCloseModal();
       }
-    };
+    },
+    [onCloseModal]
+  );
 
-    document.addEventListener("keydown", listener);
+  // escキーが押されたらモーダルを閉じる(リスナ登録と解除)
+  useEffect(() => {
+    document.addEventListener("keydown", closeModalKeyboardListener);
 
-    return document.removeEventListener("keydown", listener);
-  }, [onCloseModal]);
+    return document.removeEventListener("keydown", closeModalKeyboardListener);
+  }, [closeModalKeyboardListener]);
 
   return (
     <div className="book-info-modal-wrapper" onClick={onCloseModal}>
