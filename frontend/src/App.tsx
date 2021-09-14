@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.scss";
+import { AppBar } from "./components/AppBar";
 import { BookShelf } from "./components/BookShelf";
 
 function App() {
   return (
     <div className="App">
-      <div className="app-bar"></div>
+      <AppBar />
       <main className="main">
         <BookShelf />
       </main>
