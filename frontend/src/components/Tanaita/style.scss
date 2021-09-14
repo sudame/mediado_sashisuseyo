@@ -20,9 +20,12 @@ $ita-depth: 2vw;
     height: 5px;
     margin-left: -$ita-depth;
 
+    // 棚板の「板」の地面に並行な部分
     &-1 {
       background-color: #e2d5bf;
       height: 1rem;
+
+      // 長方形を台形に切り抜く
       clip-path: polygon(
         0% 100%,
         $ita-depth 0%,
@@ -31,6 +34,7 @@ $ita-depth: 2vw;
       );
     }
 
+    // 棚板の「板」の地面に垂直な部分
     &-2 {
       background-color: #f2e5d0;
       height: 5px;
