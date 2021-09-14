@@ -30,8 +30,13 @@ pip 21.2.4
 $ pip install -r requirements.txt
 ```
 
-3: .ローカルサーバーの立ち上げ
+3: .実行
 ```
+# DATABASE URLの取得
+heroku config
+# 環境変数への登録
+export DATABASE_URL =
+# 鯖立て
 python app.py
 ````
 4: .herokuへのデプロイ
