@@ -51,3 +51,37 @@ $ tree
 ├── requirements.txt
 └── src
     └── main.py
+
+
+# デプロイ
+
+### セットアップ
+一度やればOK
+
+1. Heroku CLI をダウンロード
+    - https://devcenter.heroku.com/ja/articles/heroku-cli
+
+2. Heroku CLI にログイン
+
+```sh
+heroku auth:login
+```
+
+3. Gitにデプロイ先を登録
+
+```sh
+git remote add heroku https://miro.com/app/board/o9J_lzl019Q=/
+```
+
+### デプロイ
+以下のいずれかのコマンドでデプロイ
+
+```sh
+# mainブランチをそのままデプロイ
+git push heroku main
+
+# mainブランチ以外をデプロイ
+git push heroku <branch-name>:main
+```
+
+Herokuにあるコードがデプロイするコードより古い場合Git的にpushできないので、`git push -f xxxxxxxx`としてフォースプッシュする必要がある
