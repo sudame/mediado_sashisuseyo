@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+# fix: netlify routing setting
+!/build/_redirects
 # production
 /build
 
