@@ -4,11 +4,11 @@ import "./style.scss";
 import { authContext } from "../hooks/useAuthContext";
 
 export const Login: React.FC = () => {
-  const userId = useContext(authContext);
+  const auth = useContext(authContext);
 
   // context更新
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    userId.setUserId(Number(event.target.value));
+    auth.setUserId(Number(event.target.value));
   };
 
   const handleSubmit = () => {
