@@ -24,18 +24,18 @@ export const Login: React.FC = () => {
         <div className="login-header">
           <p>ログイン</p>
         </div>
-        <form className="login-form login-center" onSubmit={handleSubmit}>
-          <label className="login-form-label">ユーザーID</label>
+        <form className="login-form login-center">
           <input
             className="login-form-input login-form-text"
             type="text"
-            placeholder=""
+            placeholder="ユーザーID"
             onChange={handleInputChange}
           />
           <input
             className="login-form-input login-form-submit"
-            type="submit"
+            type="button"
             value="ログイン"
+            onClick={handleSubmit}
           />
         </form>
       </div>
