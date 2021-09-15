@@ -9,7 +9,7 @@
   display: flex;
   flex-basis: auto;
   justify-content: flex-start;
-  padding: 1rem 0;
+  padding: 1rem 0.5rem;
 
   /* 縦書き */
   writing-mode: vertical-rl;
@@ -23,5 +23,9 @@
 
   &:focus {
     border: red 1px solid;
+  }
+
+  p {
+    margin: 0;
   }
 }
