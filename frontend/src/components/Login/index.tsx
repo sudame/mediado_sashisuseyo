@@ -14,6 +14,8 @@ export const Login: React.FC = () => {
     setUserId(event.target.value);
   };
 
+  const handeEnterKey = () => {};
+
   const handleSubmit = () => {
     if (userId) {
       auth.setUserId(Number(userId));
@@ -33,6 +35,12 @@ export const Login: React.FC = () => {
             type="text"
             placeholder="ユーザーID"
             onChange={handleInputChange}
+            onKeyDown={(event) => {
+              // keyCodeは deprecated で key を使う必要があるが、
+              // IME入力確定の Enter と区別するためには
+              // KeyCode を使って区別する必要がある
+              if (event.keyCode === 13) handleSubmit();
+            }}
           />
           <input
             className="login-form-input login-form-submit"
