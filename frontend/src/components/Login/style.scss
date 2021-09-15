@@ -7,8 +7,8 @@
     align-items: center;
   }
   &-container {
-    width: fit-content;
-    height: fit-content;
+    width: 90vw;
+    max-width: 400px;
 
     //   背景
     background-color: #eeeeee;
@@ -19,7 +19,8 @@
   &-header {
     width: 100%;
     min-width: 40vw;
-    font-size: 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
 
     & p {
       margin: 5%;
@@ -38,27 +39,42 @@
     &-input {
       width: 100%;
       min-height: 3vw;
-      font-size: 30px;
 
       // 良い感じに両端を丸くする
       border-radius: 50px;
-      border: 2px solid #ddd;
       box-sizing: border-box;
+
+      padding: 0.5rem 1rem;
 
       margin: 1vw;
     }
 
     &-text {
+      border: 2px solid #ddd;
       &:focus {
         border: 2px solid #ff9900;
         z-index: 10;
         outline: 0;
+      }
+
+      &::placeholder {
+        opacity: 0.25;
       }
     }
 
     &-submit {
       background-color: #c9a584;
       color: #eeeeee;
+      cursor: pointer;
+      border: none;
+
+      &:hover {
+        opacity: 0.75;
+      }
+
+      &:active {
+        opacity: 0.6;
+      }
     }
   }
 }
