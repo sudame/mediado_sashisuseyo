@@ -14,8 +14,6 @@ export const Login: React.FC = () => {
     setUserId(event.target.value);
   };
 
-  const handeEnterKey = () => {};
-
   const handleSubmit = () => {
     if (userId) {
       auth.setUserId(Number(userId));
