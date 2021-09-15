@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./style.scss";
 
-export const Login: React.FC = () => {
-  const [userId, setUserId] = useState<number | null>(null);
+import { authContext } from "../hooks/useAuthContext";
 
+export const Login: React.FC = () => {
+  const userId = useContext(authContext);
+
+  // context更新
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setUserId(Number(event.target.value));
+    userId.setUserId(Number(event.target.value));
   };
 
   const handleSubmit = () => {
-    //   ページ遷移時に使用
+    //   ページ遷移用関数
   };
 
   return (
