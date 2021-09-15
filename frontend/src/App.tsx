@@ -8,19 +8,19 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <AppBar />
-      <main className="main">
-        <Router>
-          <Switch>
-            <authContext.Provider value={useAuthContext()}>
+    <authContext.Provider value={useAuthContext()}>
+      <div className="App">
+        <AppBar />
+        <main className="main">
+          <Router>
+            <Switch>
               <Route exact path="/Login" component={Login} />
               <Route exact path="/" component={BookShelf} />
-            </authContext.Provider>
-          </Switch>
-        </Router>
-      </main>
-    </div>
+            </Switch>
+          </Router>
+        </main>
+      </div>
+    </authContext.Provider>
   );
 }
 

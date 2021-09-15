@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./style.scss";
 import logo from "./logo.svg";
 import titleLogo from "./logo_title.svg";
-import { useAuthContext } from "../hooks/useAuthContext";
+import { authContext } from "../hooks/useAuthContext";
 
 export const AppBar: React.FC = () => {
-  const auth = useAuthContext();
+  const auth = useContext(authContext);
 
   return (
     <div className="app-bar">
