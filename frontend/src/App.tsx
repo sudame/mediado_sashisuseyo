@@ -7,15 +7,15 @@ import { authContext, useAuthContext } from "./components/hooks/useAuthContext";
 
 function App() {
   return (
-    <>
+    <div className="App">
       <AppBar />
-      <div className="App">
+      <main className="main">
         <authContext.Provider value={useAuthContext()}>
           <Login />
           <BookShelf />
         </authContext.Provider>
-      </div>
-    </>
+      </main>
+    </div>
   );
 }
 
