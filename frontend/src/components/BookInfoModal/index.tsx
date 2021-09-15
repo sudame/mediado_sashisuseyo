@@ -11,6 +11,7 @@ type PanelProp = {
 const BookInfoModalPanel: React.FC<PanelProp> = ({ book, onCloseModal }) => {
   const modifyNewLine = (text: string) => text.replaceAll("\\n", "\n");
 
+  // TODO: モック時はフロントでURLを見て書店名を切り分ける
   const convertUrlToShopName = (url: string) => {
     if (url.indexOf("amazon") >= 0) return "Amazon";
     else if (url.indexOf("rakuten") >= 0) return "楽天";
