@@ -11,6 +11,12 @@ type PanelProp = {
 const BookInfoModalPanel: React.FC<PanelProp> = ({ book, onCloseModal }) => {
   const modifyNewLine = (text: string) => text.replaceAll("\\n", "\n");
 
+  const convertUrlToShopName = (url: string) => {
+    if (url.indexOf("amazon") >= 0) return "Amazon";
+    else if (url.indexOf("rakuten") >= 0) return "楽天";
+    else return "その他の店舗";
+  };
+
   return (
     <div
       className="book-info-panel"
@@ -31,6 +37,18 @@ const BookInfoModalPanel: React.FC<PanelProp> = ({ book, onCloseModal }) => {
       <div className="book-info-panel--right">
         <div className="book-info-panel--title">{book.title}</div>
         <div className="book-info-panel--author">{book.author}</div>
+        <div className="book-info-panel--shops">
+          {book.purchasedShops.map((shop) => (
+            <a
+              className="book-info-panel--shop"
+              href={shop.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {convertUrlToShopName(shop.url)}で読む
+            </a>
+          ))}
+        </div>
         <div className="book-info-panel--description">
           {modifyNewLine(book.description)}
         </div>
