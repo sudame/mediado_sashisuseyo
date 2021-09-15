@@ -14,6 +14,8 @@ export const Login: React.FC = () => {
     setUserId(event.target.value);
   };
 
+  const handeEnterKey = () => {};
+
   const handleSubmit = () => {
     if (userId) {
       auth.setUserId(Number(userId));
@@ -33,6 +35,9 @@ export const Login: React.FC = () => {
             type="text"
             placeholder="ユーザーID"
             onChange={handleInputChange}
+            onKeyDown={(event) => {
+              if (event.keyCode === 13) handleSubmit();
+            }}
           />
           <input
             className="login-form-input login-form-submit"
