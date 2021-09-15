@@ -5,14 +5,14 @@ import titleLogo from "./logo_title.svg";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 export const AppBar: React.FC = () => {
-  const { userId } = useAuthContext();
+  const auth = useAuthContext();
 
   return (
     <div className="app-bar">
       <img className="app-bar--logo" src={logo} alt="" />
       <img className="app-bar--title-logo" src={titleLogo} alt="" />
       <div className="spacer"></div>
-      {userId ? (
+      {auth.userId ? (
         <button
           className="app-bar--books-register"
           onClick={() => {
