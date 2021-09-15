@@ -34,7 +34,9 @@ export const BookShelf: React.FC = () => {
 
   useEffect(() => {
     // userIdがnullであれば、ログインへリダイレクト
-    auth.userId === null && history.push("/login");
+    if (auth.userId) {
+      history.push("/login");
+    }
   }, [auth.userId, history]);
 
   return (
