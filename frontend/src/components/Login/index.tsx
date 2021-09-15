@@ -33,6 +33,10 @@ export const Login: React.FC = () => {
             type="text"
             placeholder="ユーザーID"
             onChange={handleInputChange}
+            onKeyDown={(event) => {
+              // Enterで送信
+              if (event.key === "Enter" || event.key === " ") handleSubmit();
+            }}
           />
           <input
             className="login-form-input login-form-submit"
