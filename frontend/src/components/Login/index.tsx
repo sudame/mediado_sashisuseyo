@@ -29,7 +29,7 @@ export const Login: React.FC = () => {
         <div className="login-header">
           <p>ログイン</p>
         </div>
-        <form className="login-form login-center">
+        <div className="login-form login-center">
           <input
             className="login-form-input login-form-text"
             type="text"
@@ -48,7 +48,7 @@ export const Login: React.FC = () => {
             value="ログイン"
             onClick={handleSubmit}
           />
-        </form>
+        </div>
       </div>
     </>
   );
