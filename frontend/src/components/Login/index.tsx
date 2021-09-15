@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import "./style.scss";
 
 import { authContext } from "../hooks/useAuthContext";
+import { useHistory } from "react-router";
 
 export const Login: React.FC = () => {
   const auth = useContext(authContext);
+  const history = useHistory();
 
   // context更新
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,6 +15,7 @@ export const Login: React.FC = () => {
 
   const handleSubmit = () => {
     //   ページ遷移用関数
+    auth.userId !== null && history.push("/");
   };
 
   return (

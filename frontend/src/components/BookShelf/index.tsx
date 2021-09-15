@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BookListItem } from "../../models/BookListItem";
 import { BookInfoModal } from "../BookInfoModal";
 import { useBookList } from "../hooks/useBookList";
 import { Tanaita } from "../Tanaita";
 import "./style.scss";
 
+import { authContext } from "../hooks/useAuthContext";
+import { useHistory } from "react-router";
+
 export const BookShelf: React.FC = () => {
   const bookList = useBookList();
+  // userIdの共有
+  const auth = useContext(authContext);
+  const history = useHistory();
 
   const [targetBookId, setTargetBookId] = useState<string | null>(null);
 
@@ -25,6 +31,11 @@ export const BookShelf: React.FC = () => {
         index % n ? acc : [...acc, bookList.slice(index, index + n)],
       []
     );
+
+  useEffect(() => {
+    // userIdがnullであれば、ログインへリダイレクト
+    auth.userId === null && history.push("/login");
+  }, [auth.userId, history]);
 
   return (
     <>
